@@ -10,6 +10,8 @@ change to the prompt, toolbelt, or model can't silently make things worse.
 See `docs/spec.md` for the full design (scoring methodology, cost/latency tracking,
 regression gating) and `docs/decisions.md` for rejected approaches as they come up.
 
+**Build log:** [goldlayer.dev/writing/analytics-agent-eval-harness](https://goldlayer.dev/writing/analytics-agent-eval-harness.html)
+
 ## What this adds on top of project 1
 
 Project 1 proved the agent can chain tool calls and log a structured trace per question.
