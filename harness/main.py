@@ -6,7 +6,7 @@ saved baseline. See docs/spec.md for the full design.
 import argparse
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import yaml
 
@@ -63,7 +63,7 @@ def run_one(question: dict) -> dict:
 
 
 def build_report(question_records: list[dict], started_at: str) -> dict:
-    completed_at = datetime.now(timezone.utc).isoformat()
+    completed_at = datetime.now(UTC).isoformat()
     scored = [q for q in question_records if q.get("score") is not None]
     num_passed = sum(1 for q in scored if q["passed"])
     accuracy_pct = 100 * num_passed / len(scored) if scored else 0.0
@@ -75,7 +75,7 @@ def build_report(question_records: list[dict], started_at: str) -> dict:
     )
 
     return {
-        "run_id": "run_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"),
+        "run_id": "run_" + datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ"),
         "run_started_at": started_at,
         "run_completed_at": completed_at,
         "num_questions": len(question_records),
@@ -114,7 +114,7 @@ def main() -> None:
             print(f"no questions matched: {args.questions}", file=sys.stderr)
             sys.exit(2)
 
-    started_at = datetime.now(timezone.utc).isoformat()
+    started_at = datetime.now(UTC).isoformat()
     question_records = []
     for q in all_questions:
         print(f"running {q['id']} ({q['tier']})...", file=sys.stderr)

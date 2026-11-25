@@ -6,7 +6,7 @@ boundary and the JSON shape it prints on stdout.
 import json
 import subprocess
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from . import config
 
@@ -16,7 +16,7 @@ class AgentInvocationError(RuntimeError):
 
 
 def run_question(question_id: str, question_text: str) -> dict:
-    started_at = datetime.now(timezone.utc).isoformat()
+    started_at = datetime.now(UTC).isoformat()
     start = time.monotonic()
     try:
         proc = subprocess.run(
@@ -26,6 +26,7 @@ def run_question(question_id: str, question_text: str) -> dict:
             capture_output=True,
             text=True,
             timeout=config.SUBPROCESS_TIMEOUT_SECONDS,
+            check=False,
         )
     except subprocess.TimeoutExpired as e:
         raise AgentInvocationError(
@@ -33,7 +34,7 @@ def run_question(question_id: str, question_text: str) -> dict:
             f"for {question_id}"
         ) from e
     wall_ms = round((time.monotonic() - start) * 1000, 2)
-    completed_at = datetime.now(timezone.utc).isoformat()
+    completed_at = datetime.now(UTC).isoformat()
 
     if proc.returncode != 0:
         raise AgentInvocationError(
