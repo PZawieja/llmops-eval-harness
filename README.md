@@ -77,7 +77,7 @@ Unit tests cover scoring, cost calculation, and gate logic — all without live 
 | 1 | [dbt-agentic-engine](https://github.com/PZawieja/dbt-agentic-engine) | Agentic tool-use + structured trace |
 | 2 | [llmops-eval-harness](https://github.com/PZawieja/llmops-eval-harness) (this repo) | Scored eval loop, cost/latency tracking, regression gate |
 | 3 | [semantic-layer-agent](https://github.com/PZawieja/semantic-layer-agent) | Agent on the dbt Semantic Layer: disambiguation, templates, memory |
-| 4 | governed-analytics-mcp (in progress) | MCP server that queries as the asker: per-user row-level security, audit log |
+| 4 | [governed-analytics-mcp](https://github.com/PZawieja/governed-analytics-mcp) | MCP server that queries as the asker: warehouse RLS, persona evals, audit log |
 
 ## License
 
