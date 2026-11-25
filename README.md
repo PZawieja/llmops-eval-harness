@@ -1,6 +1,6 @@
 # LLMOps Eval Harness
 
-Project 2 of 4 in a series demonstrating AI + Analytics Engineering skill. Project 1,
+Project 2 of 4 in a series on AI + analytics engineering (see [Series](#series)). Project 1,
 [`dbt-agentic-engine`](https://github.com/PZawieja/dbt-agentic-engine), is an agent that
 chains tool calls over a dbt project and logs a structured execution trace per question.
 This project runs that agent's fixed eval set live, scores each answer, tracks token
@@ -69,3 +69,16 @@ uv run pytest
 ```
 
 Unit tests cover scoring, cost calculation, and gate logic — all without live API calls.
+
+## Series
+
+| # | Repo | What it adds |
+|---|---|---|
+| 1 | [dbt-agentic-engine](https://github.com/PZawieja/dbt-agentic-engine) | Agentic tool-use + structured trace |
+| 2 | [llmops-eval-harness](https://github.com/PZawieja/llmops-eval-harness) (this repo) | Scored eval loop, cost/latency tracking, regression gate |
+| 3 | [semantic-layer-agent](https://github.com/PZawieja/semantic-layer-agent) | Agent on the dbt Semantic Layer: disambiguation, templates, memory |
+| 4 | governed-analytics-mcp (in progress) | MCP server that queries as the asker: per-user row-level security, audit log |
+
+## License
+
+MIT
