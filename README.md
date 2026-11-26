@@ -79,6 +79,7 @@ Unit tests cover scoring, cost calculation, and gate logic — all without live 
 | 3 | [semantic-layer-agent](https://github.com/PZawieja/semantic-layer-agent) | Agent on the dbt Semantic Layer: disambiguation, templates, memory |
 | 4 | [governed-analytics-mcp](https://github.com/PZawieja/governed-analytics-mcp) | MCP server that queries as the asker: warehouse RLS, persona evals, audit log |
 | 5 | [dbt-llm-enrich](https://github.com/PZawieja/dbt-llm-enrich) | LLM classification as a tested dbt layer: content-hash cache, Batches API, golden-set accuracy tests, cost table |
+| 6 | [observability-on-a-budget](https://github.com/PZawieja/observability-on-a-budget) | SQL monitors in dbt, rules triage, advisory AI notes, all scored against planted faults |
 
 ## License
 
